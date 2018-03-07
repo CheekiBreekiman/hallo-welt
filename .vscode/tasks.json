@@ -1,17 +1,24 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
             "label": "build",
-            "command": "dotnet build",
-            "type": "shell",
+            "command": "dotnet",
+            "type": "process",
             "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": "$msCompile"
+            "args": [
+                "build"
+            ]
+        },
+        {
+            "label": "execute",
+            "command": "dotnet",
+            "type": "process",
+            "group": "build",
+            "args": [
+                ".\\bin\\debug\\netcoreapp2.0\\hallo-welt.dll"
+            ]
         }
+
     ]
 }
